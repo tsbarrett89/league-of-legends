@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchChampions } from '../actions'
 import ChampionCard from './ChampionCard'
 
 const ChampionList = props => {
-    props.fetchChampions()
+    useEffect(() => {props.fetchChampions()}, [])
 
     return (
         <div>
             {props.champions.map(champion => {
-                return <ChampionCard champion={champion} />
+                return <ChampionCard key={champion.key} champion={champion} />
             })}
         </div>
     )

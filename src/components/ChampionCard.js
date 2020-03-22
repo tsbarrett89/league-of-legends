@@ -1,10 +1,10 @@
 import React from 'react'
 
 const ChampionCard = props => {
-    console.log(props.champion)
+    
     return (
         <div>
-
+            <h3>{props.champion.name}</h3>
         </div>
     )
 }
