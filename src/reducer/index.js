@@ -2,10 +2,12 @@ import {
     FETCH_CHAMPIONS_START,
     FETCH_CHAMPIONS_SUCCESS,
     FETCH_CHAMPIONS_FAILURE
-}
+} from '../actions'
 
 const initialState = {
-    champions: []
+    champions: [],
+    isFetching: false,
+    errorMessage: ''
 }
 
 const reducer = (state = initialState, action) => {
