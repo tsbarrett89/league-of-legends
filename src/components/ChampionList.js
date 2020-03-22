@@ -11,7 +11,7 @@ const ChampionList = () => {
         axios.get('http://ddragon.leagueoflegends.com/cdn/10.6.1/data/en_US/champion.json')
             .then(res => {
                 for(champion in res.data.data) {
-                    useDispatch({ type: "ADD_CHAMPION", payload: champion })
+                    useDispatch({ type: "ADD_CHAMPION", payload: res.data.data[champion] })
                 }
             })
             .catch(err => console.log(err))

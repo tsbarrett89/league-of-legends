@@ -3,7 +3,19 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-    return state
+    switch (action.type) {
+        case "ADD_CHAMPION":
+            return {
+                ...state,
+                champions: [
+                    ...state.champions,
+                    action.payload
+                ]
+            }
+        default:
+            return state
+    }
+    
 }
 
 export default reducer
