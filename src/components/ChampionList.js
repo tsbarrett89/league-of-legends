@@ -10,9 +10,7 @@ const ChampionList = () => {
     useEffect(() => {
         axios.get('http://ddragon.leagueoflegends.com/cdn/10.6.1/data/en_US/champion.json')
             .then(res => {
-                for(champion in res.data.data) {
-                    useDispatch({ type: "ADD_CHAMPION", payload: res.data.data[champion] })
-                }
+                useDispatch({ type: "FETCH_CHAMPIONS", payload: res.data.data })
             })
             .catch(err => console.log(err))
     }, [])
