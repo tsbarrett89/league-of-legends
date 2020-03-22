@@ -29,7 +29,15 @@ const reducer = (state = initialState, action) => {
             }
         case FETCH_CHAMPIONS_SUCCESS:
             return {
-                ...state
+                ...state,
+                isFetching: false,
+                errorMessage: ''
+            }
+        case FETCH_CHAMPIONS_FAILURE:
+            return {
+                ...state,
+                isFetching: false,
+                errorMessage: action.payload
             }
         default:
             return state

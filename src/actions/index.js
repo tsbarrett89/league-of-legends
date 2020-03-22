@@ -14,7 +14,7 @@ export const fetchChampions = () => dispatch => {
             for(const champion in res.data.data){
                 dispatch({ type: ADD_CHAMPION, payload: res.data.data[champion]})
             }
-            dispatch({ type: FETCH_CHAMPIONS_SUCCESS, payload: res.data.data })
+            dispatch({ type: FETCH_CHAMPIONS_SUCCESS })
         })
         .catch(err => dispatch({ type: FETCH_CHAMPIONS_FAILURE, payload: `failed with a ${err.status} status code`}))
 }
