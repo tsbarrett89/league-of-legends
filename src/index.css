@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.champs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  grid-gap: 2%;
+}
+
+.champ-card {
+  background-color: lightblue;
+}

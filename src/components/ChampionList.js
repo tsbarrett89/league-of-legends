@@ -8,7 +8,7 @@ const ChampionList = props => {
     useEffect(() => {props.fetchChampions()}, [])
 
     return (
-        <div>
+        <div className="champs-container">
             {props.champions.map(champion => {
                 return <ChampionCard key={champion.key} champion={champion} />
             })}
